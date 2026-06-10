@@ -1,0 +1,25 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: aiservice
+  data:
+    mongodb:
+      uri: mongodb+srv://shikshak013_db_user:shikshak@cluster0.bm3vfwo.mongodb.net/?appName=Cluster0
+      database: airecommendationfitnes
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: acitivity-processor-group
+      key-deserializer: org.apache.kafka.common.serialization.StringSerializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonSerializer
+kafka:
+  topic:
+    name: activity-events
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
