@@ -5,3 +5,5 @@ target/
 application-local.yml
 logs/
 .DS_Store
+*.yml
+*.yaml

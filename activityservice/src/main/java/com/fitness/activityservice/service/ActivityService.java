@@ -45,8 +45,9 @@ public class ActivityService {
 
         try {
             kafkaTemplate.send(topicName, savedActivity.getUserId(),savedActivity);
+            log.info("Activity sent to Kafka topic: {}", topicName);
         } catch (Exception e) {
-            e.getStackTrace();
+            log.error("Failed to send activity to Kafka topic: {} - Error: ", topicName, e);
         }
 
         return mapToResponse(savedActivity);

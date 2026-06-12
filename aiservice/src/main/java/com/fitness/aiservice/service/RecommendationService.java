@@ -12,12 +12,12 @@ import java.util.List;
 public class RecommendationService {
     private final RecommendationRepository recommendationRepository;
 
-    public List<Recommendation> getUserRecommendations(String userId) {
+    public List<Recommendation> getUserRecommendation(String userId) {
         return recommendationRepository.findByUserId(userId);
     }
 
-    public Recommendation getActivityRecommendations(String activityId) {
+    public Recommendation getActivityRecommendation(String activityId) {
         return recommendationRepository.findByActivityId(activityId)
-                .orElseThrow(()-> new RuntimeException("Activity not found for this activityId: " + activityId));
+                .orElseThrow(() -> new RuntimeException("No recommendation found for this activity: " + activityId));
     }
 }
