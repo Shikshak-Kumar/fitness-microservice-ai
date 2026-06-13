@@ -1,13 +1,9 @@
-package com.fitness.userservice.dto;
+package com.fitness.gateway.dto;
 
-import com.fitness.userservice.models.UserRole;
-import jakarta.persistence.Column;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import lombok.Data;
-import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
+
 @Data
 public class UserResponse {
     private String id;
